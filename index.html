@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Vas Bien
+        </title>
+        <link rel="manifest" href="/manifest.json">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <script src="script/main.js"></script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/sw.js').then(function (registration) {
+                        // Registration was successful
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    }, function (err) {
+                        // registration failed :(
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Prueba PWA xdxd</h1>
+
+        <button onclick="cambiar_fondo_red();">blue</button>
+        <button onclick="cambiar_fondo_yellow();">Yellow</button>
+        <button onclick="cambiar_fondo_green();">green</button>
+
+    </body>
+</html>
